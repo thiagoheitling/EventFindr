@@ -12,17 +12,16 @@ private let reuseIdentifier = "ResultCell"
 
 class SearchResultsTableViewController: UITableViewController {
 
-    let FEED_URL = "http://api.eventful.com/json/events/search?...&category=music&date=future&app_key=%22RvmHs99fRL7TWZ26%22"
+//    let FEED_URL = "http://api.eventful.com/json/events/search?category=music&date=Future&app_key=%22RvmHs99fRL7TWZ26%22"
+    
+    var feed_URL_String = String()
     var eventsList = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        tableView?.dataSource = self
-//        tableView?.delegate = self
         
         let session = NSURLSession.sharedSession()
-        let url = NSURL(string: FEED_URL)
+        let url = NSURL(string: feed_URL_String)
         let dataTask = session.dataTaskWithURL(url!) { (data, response, error) in
             
             if (data == nil) {
@@ -33,36 +32,36 @@ class SearchResultsTableViewController: UITableViewController {
             // parse JSON
             
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-                
-                var eventTitle = String()
-                var imageURLString = String()
-                
-                if let eventsDictionary = json["events"] as? [String: AnyObject] {
-                
+                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:NSObject],
+                    let eventsDictionary = json["events"] as? [String: AnyObject],
+                    let eventArray = eventsDictionary["event"] as? [[String: AnyObject]] {
+                    
                     print(eventsDictionary)
-                        
-                    if let eventDict = eventsDictionary["event"] as? [[String: AnyObject]] {
-                     
-                        for event in eventDict {
-                                
-                            eventTitle = (event["title"] as? String)!
+                    
+                    for event in eventArray {
+                    
+                        if let imageDict = event["image"] as? [String: AnyObject] {
                             
-                            if let imageDict = event["image"] as? [String: AnyObject] {
+                            if let medium = imageDict["medium"] as? [String: AnyObject] {
                                 
-                                if let small = imageDict["small"] as? [String: AnyObject] {
+                                let imageURLString = (medium["url"] as? String)
+                                
+                                if imageURLString != nil && imageURLString != "" {
                                     
-                                    imageURLString = (small["url"] as? String)!
-//                                    imageURL = NSURL(string: imageURLString!)!
+                                    let eventTitle = (event["title"] as? String)!
+                                    
+                                    print(eventTitle)
+                                    
+                                    let event = Event()
+                                    event.title = eventTitle
+                                    event.imageURLString = imageURLString!
+                                    self.eventsList.append(event)
                                 }
                             }
-                            let event = Event()
-                            event.title = eventTitle
-                            event.imageURLString = imageURLString
-                            self.eventsList.append(event)
                         }
                     }
                 }
+                
             } catch {
                 
                 print("json error: \(error)")
@@ -75,11 +74,6 @@ class SearchResultsTableViewController: UITableViewController {
         }
         
         dataTask.resume()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -95,11 +89,10 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SearchResultsTableViewCell
-
-        let event = self.eventsList[indexPath.row]
         
+        cell.eventImageView.image = nil
+        let event = self.eventsList[indexPath.row]
         cell.configureWithResultsFeed(event)
-
         return cell
     }
 
