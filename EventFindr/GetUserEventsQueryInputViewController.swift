@@ -8,22 +8,27 @@
 
 import UIKit
 
-class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CalendarVCDelegate {
 
-    let categoryPickerData = [["all", "music", "sports", "technology", "performing_arts", "movies_film"]]
+    let categoryPickerData = [["music", "sports", "technology", "performing_arts", "movies_film", "all"]]
     
-    @IBOutlet weak var categoryTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var locationField: UITextField!
+    @IBOutlet weak var datesButton: UIButton!
     @IBOutlet weak var categoryPicker: UIPickerView!
     
     let urlStringMaker = URLStringMaker()
-    var categoryChosen = String()
+    var categoryChosen = "music"
+    var dateRangeString = String()
+    var dateSelected = DSLCalendarRange()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Findr"
+        
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,11 +69,43 @@ class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDeleg
 
         if segue.identifier == "showEvents" {
 
-            let urlStringMakerResponse = urlStringMaker.makeURLString(categoryChosen, date: dateTextField.text!)
-            let destVc = segue.destinationViewController as! SearchResultsTableViewController            
-            destVc.feed_URL_String = urlStringMakerResponse
+            var urlStringToShowFeed = String()
+            
+            if datesButton.titleLabel?.text == "all dates" {
+                
+                urlStringToShowFeed = urlStringMaker.makeURLString(categoryChosen, date: "Future")
+            
+            } else {
+            
+                urlStringToShowFeed = urlStringMaker.makeURLString(categoryChosen, date: dateRangeString)
+            }
+            
+            let destVc = segue.destinationViewController as! SearchResultsTableViewController
+            destVc.feed_URL_String = urlStringToShowFeed
+            
         }
-        
+    
+        if segue.identifier == "ShowCalendar" {
+            
+            let destVC = segue.destinationViewController as! CalendarViewController
+            destVC.delegate = self
+        }
     }
+    
+    func userDidSelectDateRange(dateRange:String, buttonTitle: String) {
+        
+        self.datesButton.setTitle(buttonTitle, forState: .Normal)
+        
+        print("Button title = \(buttonTitle)")
+        
+        if buttonTitle != "all dates" {
 
+            self.dateRangeString = dateRange
+        
+        } else {
+            
+            self.dateRangeString = ""
+        
+        }
+    }
 }

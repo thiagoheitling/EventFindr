@@ -15,7 +15,7 @@ class URLStringMaker: NSObject {
     
     func makeURLString(category: String, date: String) -> String {
         
-        let urlString = eventfulSearchDomain + "category=" + category + "&date=" + date + "&app_key=" + eventfulKey
+        let urlString = eventfulSearchDomain + "page_size=50" + "&category=" + category + "&date=" + date + "&app_key=" + eventfulKey
         
         print("This is the searchURL: \(urlString)")
         

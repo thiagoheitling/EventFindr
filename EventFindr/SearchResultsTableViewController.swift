@@ -11,8 +11,6 @@ import UIKit
 private let reuseIdentifier = "ResultCell"
 
 class SearchResultsTableViewController: UITableViewController {
-
-//    let FEED_URL = "http://api.eventful.com/json/events/search?category=music&date=Future&app_key=%22RvmHs99fRL7TWZ26%22"
     
     var feed_URL_String = String()
     var eventsList = [Event]()
@@ -36,7 +34,7 @@ class SearchResultsTableViewController: UITableViewController {
                     let eventsDictionary = json["events"] as? [String: AnyObject],
                     let eventArray = eventsDictionary["event"] as? [[String: AnyObject]] {
                     
-                    print(eventsDictionary)
+                    //print(eventsDictionary)
                     
                     for event in eventArray {
                     
@@ -48,12 +46,27 @@ class SearchResultsTableViewController: UITableViewController {
                                 
                                 if imageURLString != nil && imageURLString != "" {
                                     
-                                    let eventTitle = (event["title"] as? String)!
+                                    guard let eventTitle = (event["title"] as? String),
+                                        let eventVenue = (event["venue_name"] as? String),
+                                        let eventDate = (event["start_time"] as? String)
+                                        else {return}
+                                    
+                                    let dateFormatter = NSDateFormatter()
+                                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                                    let eventNSDate = dateFormatter.dateFromString(eventDate)
+                                    
+                                    let formatter = NSDateFormatter()
+                                    formatter.dateFormat = formatter.localizedFormat("MMMM dd, yyyy")
+                                    formatter.timeZone = NSTimeZone(name: "UTC")
+                                    
+                                    let eventDateFormatted = formatter.stringFromDate(eventNSDate!)
                                     
                                     print(eventTitle)
                                     
                                     let event = Event()
                                     event.title = eventTitle
+                                    event.venue = eventVenue
+                                    event.date = eventDateFormatted
                                     event.imageURLString = imageURLString!
                                     self.eventsList.append(event)
                                 }
@@ -96,40 +109,6 @@ class SearchResultsTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

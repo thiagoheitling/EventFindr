@@ -14,11 +14,15 @@ class Event {
     var title: String
     var imageURLString: String
     var category: String
+    var venue: String
+    var date: String
     
     init () {
         self.title = ""
         self.category = "music"
         self.imageURLString = ""
+        self.venue = ""
+        self.date = ""
     }
     
 }

@@ -12,10 +12,14 @@ class SearchResultsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var eventImageView: UIImageView!
+    @IBOutlet weak var eventVenueLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
     
     func configureWithResultsFeed(event: Event) {
         
         eventTitleLabel.text = event.title
+        eventVenueLabel.text = event.venue
+        eventDateLabel.text = event.date
         downloadedFrom(link: event.imageURLString, contentMode: .ScaleAspectFit)
         
     }

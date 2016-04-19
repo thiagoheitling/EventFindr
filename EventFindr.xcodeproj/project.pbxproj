@@ -18,6 +18,32 @@
 		D03DF3731CC00049007D8B7A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF3721CC00049007D8B7A /* Event.swift */; };
 		D03DF3751CC1553A007D8B7A /* URLStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF3741CC1553A007D8B7A /* URLStringMaker.swift */; };
 		D03DF3771CC178A6007D8B7A /* GetUserEventsQueryInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF3761CC178A6007D8B7A /* GetUserEventsQueryInputViewController.swift */; };
+		D03DF4441CC55032007D8B7A /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4261CC55032007D8B7A /* DSLCalendarDayCalloutView.m */; };
+		D03DF4451CC55032007D8B7A /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4271CC55032007D8B7A /* DSLCalendarDayCalloutView.xib */; };
+		D03DF4461CC55032007D8B7A /* DSLCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4291CC55032007D8B7A /* DSLCalendarDayView.m */; };
+		D03DF4471CC55032007D8B7A /* DSLCalendarMonthSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF42B1CC55032007D8B7A /* DSLCalendarMonthSelectorView.m */; };
+		D03DF4481CC55032007D8B7A /* DSLCalendarMonthSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03DF42C1CC55032007D8B7A /* DSLCalendarMonthSelectorView.xib */; };
+		D03DF4491CC55032007D8B7A /* DSLCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF42E1CC55032007D8B7A /* DSLCalendarMonthView.m */; };
+		D03DF44A1CC55032007D8B7A /* DSLCalendarRange.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4301CC55032007D8B7A /* DSLCalendarRange.m */; };
+		D03DF44B1CC55032007D8B7A /* DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4321CC55032007D8B7A /* DSLCalendarView.m */; };
+		D03DF44C1CC55032007D8B7A /* DSLCalendar-nextMonth.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4341CC55032007D8B7A /* DSLCalendar-nextMonth.png */; };
+		D03DF44D1CC55032007D8B7A /* DSLCalendar-nextMonth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4351CC55032007D8B7A /* DSLCalendar-nextMonth@2x.png */; };
+		D03DF44E1CC55032007D8B7A /* DSLCalendar-previousMonth.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4361CC55032007D8B7A /* DSLCalendar-previousMonth.png */; };
+		D03DF44F1CC55032007D8B7A /* DSLCalendar-previousMonth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4371CC55032007D8B7A /* DSLCalendar-previousMonth@2x.png */; };
+		D03DF4501CC55032007D8B7A /* DSLCalendarDayCallout.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4381CC55032007D8B7A /* DSLCalendarDayCallout.png */; };
+		D03DF4511CC55032007D8B7A /* DSLCalendarDayCallout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4391CC55032007D8B7A /* DSLCalendarDayCallout@2x.png */; };
+		D03DF4521CC55032007D8B7A /* DSLCalendarDaySelection-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF43A1CC55032007D8B7A /* DSLCalendarDaySelection-left.png */; };
+		D03DF4531CC55032007D8B7A /* DSLCalendarDaySelection-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF43B1CC55032007D8B7A /* DSLCalendarDaySelection-left@2x.png */; };
+		D03DF4541CC55032007D8B7A /* DSLCalendarDaySelection-middle.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF43C1CC55032007D8B7A /* DSLCalendarDaySelection-middle.png */; };
+		D03DF4551CC55032007D8B7A /* DSLCalendarDaySelection-middle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF43D1CC55032007D8B7A /* DSLCalendarDaySelection-middle@2x.png */; };
+		D03DF4561CC55032007D8B7A /* DSLCalendarDaySelection-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF43E1CC55032007D8B7A /* DSLCalendarDaySelection-right.png */; };
+		D03DF4571CC55032007D8B7A /* DSLCalendarDaySelection-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF43F1CC55032007D8B7A /* DSLCalendarDaySelection-right@2x.png */; };
+		D03DF4581CC55032007D8B7A /* DSLCalendarDaySelection.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4401CC55032007D8B7A /* DSLCalendarDaySelection.png */; };
+		D03DF4591CC55032007D8B7A /* DSLCalendarDaySelection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03DF4411CC55032007D8B7A /* DSLCalendarDaySelection@2x.png */; };
+		D03DF45A1CC55032007D8B7A /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4431CC55032007D8B7A /* NSDate+DSLCalendarView.m */; };
+		D03DF45D1CC55122007D8B7A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF45C1CC55122007D8B7A /* CalendarViewController.swift */; };
+		D03DF45F1CC55CFA007D8B7A /* DatesChosen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF45E1CC55CFA007D8B7A /* DatesChosen.swift */; };
+		D03DF4611CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4601CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +72,40 @@
 		D03DF3721CC00049007D8B7A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D03DF3741CC1553A007D8B7A /* URLStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLStringMaker.swift; sourceTree = "<group>"; };
 		D03DF3761CC178A6007D8B7A /* GetUserEventsQueryInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserEventsQueryInputViewController.swift; sourceTree = "<group>"; };
+		D03DF4251CC55032007D8B7A /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
+		D03DF4261CC55032007D8B7A /* DSLCalendarDayCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarDayCalloutView.m; sourceTree = "<group>"; };
+		D03DF4271CC55032007D8B7A /* DSLCalendarDayCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSLCalendarDayCalloutView.xib; sourceTree = "<group>"; };
+		D03DF4281CC55032007D8B7A /* DSLCalendarDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayView.h; sourceTree = "<group>"; };
+		D03DF4291CC55032007D8B7A /* DSLCalendarDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarDayView.m; sourceTree = "<group>"; };
+		D03DF42A1CC55032007D8B7A /* DSLCalendarMonthSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarMonthSelectorView.h; sourceTree = "<group>"; };
+		D03DF42B1CC55032007D8B7A /* DSLCalendarMonthSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarMonthSelectorView.m; sourceTree = "<group>"; };
+		D03DF42C1CC55032007D8B7A /* DSLCalendarMonthSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSLCalendarMonthSelectorView.xib; sourceTree = "<group>"; };
+		D03DF42D1CC55032007D8B7A /* DSLCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarMonthView.h; sourceTree = "<group>"; };
+		D03DF42E1CC55032007D8B7A /* DSLCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarMonthView.m; sourceTree = "<group>"; };
+		D03DF42F1CC55032007D8B7A /* DSLCalendarRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarRange.h; sourceTree = "<group>"; };
+		D03DF4301CC55032007D8B7A /* DSLCalendarRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarRange.m; sourceTree = "<group>"; };
+		D03DF4311CC55032007D8B7A /* DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarView.h; sourceTree = "<group>"; };
+		D03DF4321CC55032007D8B7A /* DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarView.m; sourceTree = "<group>"; };
+		D03DF4341CC55032007D8B7A /* DSLCalendar-nextMonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-nextMonth.png"; sourceTree = "<group>"; };
+		D03DF4351CC55032007D8B7A /* DSLCalendar-nextMonth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-nextMonth@2x.png"; sourceTree = "<group>"; };
+		D03DF4361CC55032007D8B7A /* DSLCalendar-previousMonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-previousMonth.png"; sourceTree = "<group>"; };
+		D03DF4371CC55032007D8B7A /* DSLCalendar-previousMonth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-previousMonth@2x.png"; sourceTree = "<group>"; };
+		D03DF4381CC55032007D8B7A /* DSLCalendarDayCallout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSLCalendarDayCallout.png; sourceTree = "<group>"; };
+		D03DF4391CC55032007D8B7A /* DSLCalendarDayCallout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDayCallout@2x.png"; sourceTree = "<group>"; };
+		D03DF43A1CC55032007D8B7A /* DSLCalendarDaySelection-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-left.png"; sourceTree = "<group>"; };
+		D03DF43B1CC55032007D8B7A /* DSLCalendarDaySelection-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-left@2x.png"; sourceTree = "<group>"; };
+		D03DF43C1CC55032007D8B7A /* DSLCalendarDaySelection-middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-middle.png"; sourceTree = "<group>"; };
+		D03DF43D1CC55032007D8B7A /* DSLCalendarDaySelection-middle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-middle@2x.png"; sourceTree = "<group>"; };
+		D03DF43E1CC55032007D8B7A /* DSLCalendarDaySelection-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-right.png"; sourceTree = "<group>"; };
+		D03DF43F1CC55032007D8B7A /* DSLCalendarDaySelection-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-right@2x.png"; sourceTree = "<group>"; };
+		D03DF4401CC55032007D8B7A /* DSLCalendarDaySelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSLCalendarDaySelection.png; sourceTree = "<group>"; };
+		D03DF4411CC55032007D8B7A /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
+		D03DF4421CC55032007D8B7A /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
+		D03DF4431CC55032007D8B7A /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
+		D03DF45B1CC55097007D8B7A /* CalendarHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarHeader.h; sourceTree = "<group>"; };
+		D03DF45C1CC55122007D8B7A /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		D03DF45E1CC55CFA007D8B7A /* DatesChosen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesChosen.swift; sourceTree = "<group>"; };
+		D03DF4601CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSdateFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +148,7 @@
 		D03DF3441CBEE92C007D8B7A /* EventFindr */ = {
 			isa = PBXGroup;
 			children = (
+				D03DF45B1CC55097007D8B7A /* CalendarHeader.h */,
 				D03DF3651CBEE94F007D8B7A /* Model */,
 				D03DF3661CBEE956007D8B7A /* View */,
 				D03DF3681CBEE961007D8B7A /* Controllers */,
@@ -112,6 +173,8 @@
 				D03DF36A1CBEEEC0007D8B7A /* EventfulAPIKey.swift */,
 				D03DF3721CC00049007D8B7A /* Event.swift */,
 				D03DF3741CC1553A007D8B7A /* URLStringMaker.swift */,
+				D03DF45E1CC55CFA007D8B7A /* DatesChosen.swift */,
+				D03DF4601CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -119,6 +182,7 @@
 		D03DF3661CBEE956007D8B7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D03DF4241CC55032007D8B7A /* DSLCalendarView */,
 				D03DF3701CBFFD65007D8B7A /* SearchResultsTableViewCell.swift */,
 			);
 			name = View;
@@ -137,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				D03DF3761CC178A6007D8B7A /* GetUserEventsQueryInputViewController.swift */,
+				D03DF45C1CC55122007D8B7A /* CalendarViewController.swift */,
 				D03DF36E1CBFFC98007D8B7A /* SearchResultsTableViewController.swift */,
 			);
 			name = Controllers;
@@ -150,6 +215,51 @@
 			);
 			name = "Supporting Files";
 			path = EventFindr;
+			sourceTree = "<group>";
+		};
+		D03DF4241CC55032007D8B7A /* DSLCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				D03DF4251CC55032007D8B7A /* DSLCalendarDayCalloutView.h */,
+				D03DF4261CC55032007D8B7A /* DSLCalendarDayCalloutView.m */,
+				D03DF4271CC55032007D8B7A /* DSLCalendarDayCalloutView.xib */,
+				D03DF4281CC55032007D8B7A /* DSLCalendarDayView.h */,
+				D03DF4291CC55032007D8B7A /* DSLCalendarDayView.m */,
+				D03DF42A1CC55032007D8B7A /* DSLCalendarMonthSelectorView.h */,
+				D03DF42B1CC55032007D8B7A /* DSLCalendarMonthSelectorView.m */,
+				D03DF42C1CC55032007D8B7A /* DSLCalendarMonthSelectorView.xib */,
+				D03DF42D1CC55032007D8B7A /* DSLCalendarMonthView.h */,
+				D03DF42E1CC55032007D8B7A /* DSLCalendarMonthView.m */,
+				D03DF42F1CC55032007D8B7A /* DSLCalendarRange.h */,
+				D03DF4301CC55032007D8B7A /* DSLCalendarRange.m */,
+				D03DF4311CC55032007D8B7A /* DSLCalendarView.h */,
+				D03DF4321CC55032007D8B7A /* DSLCalendarView.m */,
+				D03DF4331CC55032007D8B7A /* Images */,
+				D03DF4421CC55032007D8B7A /* NSDate+DSLCalendarView.h */,
+				D03DF4431CC55032007D8B7A /* NSDate+DSLCalendarView.m */,
+			);
+			path = DSLCalendarView;
+			sourceTree = "<group>";
+		};
+		D03DF4331CC55032007D8B7A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D03DF4341CC55032007D8B7A /* DSLCalendar-nextMonth.png */,
+				D03DF4351CC55032007D8B7A /* DSLCalendar-nextMonth@2x.png */,
+				D03DF4361CC55032007D8B7A /* DSLCalendar-previousMonth.png */,
+				D03DF4371CC55032007D8B7A /* DSLCalendar-previousMonth@2x.png */,
+				D03DF4381CC55032007D8B7A /* DSLCalendarDayCallout.png */,
+				D03DF4391CC55032007D8B7A /* DSLCalendarDayCallout@2x.png */,
+				D03DF43A1CC55032007D8B7A /* DSLCalendarDaySelection-left.png */,
+				D03DF43B1CC55032007D8B7A /* DSLCalendarDaySelection-left@2x.png */,
+				D03DF43C1CC55032007D8B7A /* DSLCalendarDaySelection-middle.png */,
+				D03DF43D1CC55032007D8B7A /* DSLCalendarDaySelection-middle@2x.png */,
+				D03DF43E1CC55032007D8B7A /* DSLCalendarDaySelection-right.png */,
+				D03DF43F1CC55032007D8B7A /* DSLCalendarDaySelection-right@2x.png */,
+				D03DF4401CC55032007D8B7A /* DSLCalendarDaySelection.png */,
+				D03DF4411CC55032007D8B7A /* DSLCalendarDaySelection@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +343,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03DF4561CC55032007D8B7A /* DSLCalendarDaySelection-right.png in Resources */,
+				D03DF4481CC55032007D8B7A /* DSLCalendarMonthSelectorView.xib in Resources */,
+				D03DF4501CC55032007D8B7A /* DSLCalendarDayCallout.png in Resources */,
+				D03DF4451CC55032007D8B7A /* DSLCalendarDayCalloutView.xib in Resources */,
+				D03DF44D1CC55032007D8B7A /* DSLCalendar-nextMonth@2x.png in Resources */,
+				D03DF4531CC55032007D8B7A /* DSLCalendarDaySelection-left@2x.png in Resources */,
 				D03DF3501CBEE92C007D8B7A /* LaunchScreen.storyboard in Resources */,
+				D03DF4581CC55032007D8B7A /* DSLCalendarDaySelection.png in Resources */,
+				D03DF4541CC55032007D8B7A /* DSLCalendarDaySelection-middle.png in Resources */,
+				D03DF4511CC55032007D8B7A /* DSLCalendarDayCallout@2x.png in Resources */,
+				D03DF4591CC55032007D8B7A /* DSLCalendarDaySelection@2x.png in Resources */,
+				D03DF44F1CC55032007D8B7A /* DSLCalendar-previousMonth@2x.png in Resources */,
+				D03DF44C1CC55032007D8B7A /* DSLCalendar-nextMonth.png in Resources */,
+				D03DF4521CC55032007D8B7A /* DSLCalendarDaySelection-left.png in Resources */,
+				D03DF44E1CC55032007D8B7A /* DSLCalendar-previousMonth.png in Resources */,
+				D03DF4551CC55032007D8B7A /* DSLCalendarDaySelection-middle@2x.png in Resources */,
+				D03DF4571CC55032007D8B7A /* DSLCalendarDaySelection-right@2x.png in Resources */,
 				D03DF34D1CBEE92C007D8B7A /* Assets.xcassets in Resources */,
 				D03DF34B1CBEE92C007D8B7A /* Main.storyboard in Resources */,
 			);
@@ -253,13 +379,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03DF45D1CC55122007D8B7A /* CalendarViewController.swift in Sources */,
+				D03DF4491CC55032007D8B7A /* DSLCalendarMonthView.m in Sources */,
+				D03DF4471CC55032007D8B7A /* DSLCalendarMonthSelectorView.m in Sources */,
+				D03DF4441CC55032007D8B7A /* DSLCalendarDayCalloutView.m in Sources */,
 				D03DF3751CC1553A007D8B7A /* URLStringMaker.swift in Sources */,
+				D03DF4611CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift in Sources */,
 				D03DF3711CBFFD65007D8B7A /* SearchResultsTableViewCell.swift in Sources */,
 				D03DF3461CBEE92C007D8B7A /* AppDelegate.swift in Sources */,
 				D03DF36B1CBEEEC0007D8B7A /* EventfulAPIKey.swift in Sources */,
 				D03DF3731CC00049007D8B7A /* Event.swift in Sources */,
+				D03DF44B1CC55032007D8B7A /* DSLCalendarView.m in Sources */,
+				D03DF45F1CC55CFA007D8B7A /* DatesChosen.swift in Sources */,
 				D03DF36F1CBFFC98007D8B7A /* SearchResultsTableViewController.swift in Sources */,
+				D03DF4461CC55032007D8B7A /* DSLCalendarDayView.m in Sources */,
 				D03DF3771CC178A6007D8B7A /* GetUserEventsQueryInputViewController.swift in Sources */,
+				D03DF44A1CC55032007D8B7A /* DSLCalendarRange.m in Sources */,
+				D03DF45A1CC55032007D8B7A /* NSDate+DSLCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagoheitling.EventFindr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/EventFindr/CalendarHeader.h";
 			};
 			name = Debug;
 		};
@@ -405,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagoheitling.EventFindr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/EventFindr/EventFindr/CalendarHeader.h";
 			};
 			name = Release;
 		};
