@@ -80,9 +80,13 @@ class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDeleg
                 urlStringToShowFeed = urlStringMaker.makeURLString(categoryChosen, date: dateRangeString)
             }
             
-            let destVc = segue.destinationViewController as! SearchResultsTableViewController
-            destVc.feed_URL_String = urlStringToShowFeed
+            let destVC = segue.destinationViewController as! SearchResultsTableViewController
+            destVC.feed_URL_String = urlStringToShowFeed
             
+            guard let formattedDate = datesButton.titleLabel?.text
+                else { return }
+            destVC.title = "\(categoryChosen)" + " " + "\(formattedDate)"
+        
         }
     
         if segue.identifier == "ShowCalendar" {

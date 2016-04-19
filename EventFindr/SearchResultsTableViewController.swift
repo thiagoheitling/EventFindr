@@ -18,6 +18,9 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let attributes = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 12)!]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: feed_URL_String)
         let dataTask = session.dataTaskWithURL(url!) { (data, response, error) in
