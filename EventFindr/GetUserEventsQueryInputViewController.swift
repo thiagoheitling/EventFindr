@@ -151,7 +151,7 @@ class GetUserEventsQueryInputViewController: UIViewController, LocateOnTheMap, U
             
             pickerLabel.text = categoryData[row]
         }
-        pickerLabel.font = UIFont(name: "Helvetica Neue", size: 15)
+        pickerLabel.font = UIFont(name: "Helvetica Neue", size: 18)
         pickerLabel.textAlignment = NSTextAlignment.Center
         return pickerLabel
     }
