@@ -15,7 +15,9 @@ protocol CalendarVCDelegate: class {
 class CalendarViewController: UIViewController, UINavigationControllerDelegate, DSLCalendarViewDelegate {
 
     @IBOutlet weak var calendarView: DSLCalendarView!
-
+    @IBOutlet weak var allDatesButton: UIButton!
+    @IBOutlet weak var setRangeButton: UIButton!
+    
     weak var delegate: CalendarVCDelegate?
     
     var range = DSLCalendarRange()
@@ -25,6 +27,11 @@ class CalendarViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        allDatesButton.layer.borderWidth = 0.7
+        allDatesButton.layer.borderColor = UIColor.whiteColor().CGColor
+        setRangeButton.layer.borderWidth = 0.7
+        setRangeButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
         navigationController?.delegate = self
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.title = "choose dates"
@@ -59,14 +66,24 @@ class CalendarViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func setRangeButtonPressed(sender: AnyObject) {
         
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = formatter.localizedFormat("MMMM dd, yyyy")
-        formatter.timeZone = NSTimeZone(name: "UTC")
+        if self.range.startDay != nil {
         
-        let rangeFormattedString = formatter.stringFromDate(self.range.startDay.date!) + " to " + formatter.stringFromDate(self.range.endDay.date!)
-        
-        delegate?.userDidSelectDateRange(dateRangeString, buttonTitle: rangeFormattedString)
-        navigationController?.popViewControllerAnimated(true)
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = formatter.localizedFormat("MMMM dd, yyyy")
+            formatter.timeZone = NSTimeZone(name: "UTC")
+            
+            let rangeFormattedString = formatter.stringFromDate(self.range.startDay.date!) + " to " + formatter.stringFromDate(self.range.endDay.date!)
+            
+            delegate?.userDidSelectDateRange(dateRangeString, buttonTitle: rangeFormattedString)
+            
+            navigationController?.popViewControllerAnimated(true)
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Hi there!", message:"Please, choose dates before pressing me!", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+            self.presentViewController(alert, animated: true){}
+        }
     }
     
 /*

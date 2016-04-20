@@ -13,7 +13,6 @@ class GetUserEventsQueryInputViewController: UIViewController, LocateOnTheMap, U
 
     let categoryPickerData = [["music", "sports", "technology", "performing_arts", "movies_film", "all"]]
     
-    @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var datesButton: UIButton!
     @IBOutlet weak var categoryPicker: UIPickerView!
     
@@ -32,19 +31,26 @@ class GetUserEventsQueryInputViewController: UIViewController, LocateOnTheMap, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        datesButton.layer.borderWidth = 0.7
+        datesButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
         self.googleMapsView = GMSMapView(frame: self.googleMapsContainer.frame)
         self.view.addSubview(self.googleMapsView)
+        self.googleMapsView.layer.opacity = 0.50
         searchResultPlacesController = SearchPlacesResultsController()
         searchResultPlacesController.delegate = self
         
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
         
+        self.navigationController?.view.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         let attributes = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 12)!]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
         self.title = "all cities"
     }
-
+    
     // MARK: - Actions
     
     @IBAction func searchPlacesButtonPressed(sender: UIBarButtonItem) {
@@ -94,6 +100,18 @@ class GetUserEventsQueryInputViewController: UIViewController, LocateOnTheMap, U
             
         }
     }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        
+        searchBar.setShowsCancelButton(true, animated: true)
+        for ob: UIView in ((searchBar.subviews[0] )).subviews {
+            
+            if let z = ob as? UIButton {
+                let btn: UIButton = z
+                btn.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            }
+        }
+    }
 
     // MARK: - Category Picker DataSource
     
@@ -120,6 +138,22 @@ class GetUserEventsQueryInputViewController: UIViewController, LocateOnTheMap, U
                      inComponent component: Int)
     {
         categoryChosen = categoryPickerData[0][categoryPicker.selectedRowInComponent(0)]
+    }
+    
+    // MARK: - Category PickerView Delegates
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
+    {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = UIColor.whiteColor()
+        
+        for categoryData in categoryPickerData {
+            
+            pickerLabel.text = categoryData[row]
+        }
+        pickerLabel.font = UIFont(name: "Helvetica Neue", size: 15)
+        pickerLabel.textAlignment = NSTextAlignment.Center
+        return pickerLabel
     }
     
     // MARK: - Navigation
