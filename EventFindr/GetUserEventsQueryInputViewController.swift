@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMaps
 
-class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CalendarVCDelegate {
+class GetUserEventsQueryInputViewController: UIViewController, LocateOnTheMap, UISearchBarDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CalendarVCDelegate {
 
     let categoryPickerData = [["music", "sports", "technology", "performing_arts", "movies_film", "all"]]
     
@@ -21,19 +22,77 @@ class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDeleg
     var dateRangeString = String()
     var dateSelected = DSLCalendarRange()
     
+    @IBOutlet weak var googleMapsContainer: UIView!
+    var googleMapsView: GMSMapView!
+    var searchLatitude = ""
+    var searchLongitude = ""
+    var resultsArray = [String]()
+    var searchResultPlacesController: SearchPlacesResultsController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Findr"
+        self.googleMapsView = GMSMapView(frame: self.googleMapsContainer.frame)
+        self.view.addSubview(self.googleMapsView)
+        searchResultPlacesController = SearchPlacesResultsController()
+        searchResultPlacesController.delegate = self
         
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
         
+        let attributes = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 12)!]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        self.title = "all cities"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Actions
+    
+    @IBAction func searchPlacesButtonPressed(sender: UIBarButtonItem) {
+        
+        let searchController = UISearchController(searchResultsController: searchResultPlacesController)
+        searchController.searchBar.delegate = self
+        self.presentViewController(searchController, animated: true, completion: nil)
+        
+    }
+    
+    func locateWithLongitude(lon: Double, andLatitude lat: Double, andTitle title: String) {
+        
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            
+            let position = CLLocationCoordinate2DMake(lat, lon)
+            let marker = GMSMarker(position: position)
+            
+            let camera = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: 10)
+            self.googleMapsView.camera = camera
+            
+            marker.title = "Address: \(title)"
+            marker.map = self.googleMapsView
+            
+            self.searchLatitude = "\(position.latitude)"
+            self.searchLongitude = "\(position.longitude)"
+            self.title = "\(title)"
+            
+        }
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        let placeClient = GMSPlacesClient()
+        placeClient.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error: NSError?) -> Void in
+            
+            self.resultsArray.removeAll()
+            if results == nil {
+                return
+            }
+            
+            for result in results! {
+                let result = result as GMSAutocompletePrediction
+                self.resultsArray.append(result.attributedFullText.string)
+            }
+            
+            self.searchResultPlacesController.reloadDataWithArray(self.resultsArray)
+            
+        }
     }
 
     // MARK: - Category Picker DataSource
@@ -73,11 +132,11 @@ class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDeleg
             
             if datesButton.titleLabel?.text == "all dates" {
                 
-                urlStringToShowFeed = urlStringMaker.makeURLString(categoryChosen, date: "Future")
+                urlStringToShowFeed = urlStringMaker.makeURLString(self.searchLatitude, longitude: self.searchLongitude, category: categoryChosen, date: "Future")
             
             } else {
             
-                urlStringToShowFeed = urlStringMaker.makeURLString(categoryChosen, date: dateRangeString)
+                                urlStringToShowFeed = urlStringMaker.makeURLString(self.searchLatitude, longitude: self.searchLongitude, category: categoryChosen, date: dateRangeString)
             }
             
             let destVC = segue.destinationViewController as! SearchResultsTableViewController
@@ -85,7 +144,7 @@ class GetUserEventsQueryInputViewController: UIViewController, UIPickerViewDeleg
             
             guard let formattedDate = datesButton.titleLabel?.text
                 else { return }
-            destVC.title = "\(categoryChosen)" + " " + "\(formattedDate)"
+            destVC.title = "\(categoryChosen) on \(formattedDate)"
         
         }
     

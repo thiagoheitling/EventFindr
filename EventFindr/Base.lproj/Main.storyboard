@@ -53,27 +53,42 @@
                                     <segue destination="psr-MF-MeB" kind="show" identifier="ShowCalendar" id="gS9-WN-Xrk"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHo-b7-xAv">
+                                <rect key="frame" x="0.0" y="189" width="600" height="115"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="caP-qC-hq4" firstAttribute="leading" secondItem="R4i-4k-nta" secondAttribute="leading" constant="20" id="AyB-AE-y0p"/>
                             <constraint firstAttribute="trailing" secondItem="Wmd-DY-SFx" secondAttribute="trailing" id="CYH-2Q-LnQ"/>
+                            <constraint firstItem="IHo-b7-xAv" firstAttribute="leading" secondItem="R4i-4k-nta" secondAttribute="leading" id="DYV-9R-Kbw"/>
                             <constraint firstItem="Fdb-Ye-Ot5" firstAttribute="top" secondItem="caP-qC-hq4" secondAttribute="bottom" constant="36" id="IPE-Dn-zV6"/>
                             <constraint firstItem="Wmd-DY-SFx" firstAttribute="leading" secondItem="R4i-4k-nta" secondAttribute="leading" id="JbN-8x-zET"/>
                             <constraint firstItem="l9w-qE-4nb" firstAttribute="leading" secondItem="R4i-4k-nta" secondAttribute="leading" id="Qf8-Sx-ytl"/>
+                            <constraint firstItem="IHo-b7-xAv" firstAttribute="top" secondItem="RzA-vT-6z5" secondAttribute="bottom" constant="5" id="RmS-Jb-Say"/>
                             <constraint firstItem="RzA-vT-6z5" firstAttribute="top" secondItem="l9w-qE-4nb" secondAttribute="bottom" constant="20" id="TqP-cj-ghP"/>
                             <constraint firstItem="RzA-vT-6z5" firstAttribute="leading" secondItem="R4i-4k-nta" secondAttribute="leading" id="YKX-aY-u5f"/>
                             <constraint firstAttribute="trailing" secondItem="l9w-qE-4nb" secondAttribute="trailing" id="Yek-ff-O68"/>
                             <constraint firstItem="caP-qC-hq4" firstAttribute="top" secondItem="Wmd-DY-SFx" secondAttribute="bottom" constant="30" id="hVh-0i-ACG"/>
                             <constraint firstAttribute="trailing" secondItem="RzA-vT-6z5" secondAttribute="trailing" id="k11-uj-X76"/>
                             <constraint firstAttribute="trailing" secondItem="caP-qC-hq4" secondAttribute="trailing" constant="20" id="lvX-OT-zDm"/>
+                            <constraint firstItem="Wmd-DY-SFx" firstAttribute="top" secondItem="IHo-b7-xAv" secondAttribute="bottom" constant="30" id="yBs-Vg-9qP"/>
                             <constraint firstItem="l9w-qE-4nb" firstAttribute="top" secondItem="fZQ-hE-eqa" secondAttribute="bottom" constant="20" id="yr6-12-UM1"/>
+                            <constraint firstAttribute="trailing" secondItem="IHo-b7-xAv" secondAttribute="trailing" id="zai-HD-3rn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="M8F-Pj-ERS"/>
+                    <navigationItem key="navigationItem" id="M8F-Pj-ERS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="MfF-2w-wVf">
+                            <connections>
+                                <action selector="searchPlacesButtonPressed:" destination="IrR-te-KMk" id="DKd-eU-GFq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryPicker" destination="Wmd-DY-SFx" id="Kie-fn-oEW"/>
                         <outlet property="datesButton" destination="RzA-vT-6z5" id="sTw-PG-tm1"/>
+                        <outlet property="googleMapsContainer" destination="IHo-b7-xAv" id="VeJ-Vr-pAA"/>
                         <outlet property="locationField" destination="l9w-qE-4nb" id="7H2-dX-9xu"/>
                     </connections>
                 </viewController>
