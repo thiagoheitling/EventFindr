@@ -46,6 +46,8 @@
 		D03DF45F1CC55CFA007D8B7A /* DatesChosen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF45E1CC55CFA007D8B7A /* DatesChosen.swift */; };
 		D03DF4611CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DF4601CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift */; };
 		D05C254B1CC6CA440053212D /* SearchPlacesResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C254A1CC6CA440053212D /* SearchPlacesResultsController.swift */; };
+		D0C3C41C1CC83C41002530CD /* EventFindrTest01.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3C41B1CC83C41002530CD /* EventFindrTest01.swift */; };
+		D0C3C41E1CC8406F002530CD /* EventFindrTest02.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3C41D1CC8406F002530CD /* EventFindrTest02.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		D03DF45E1CC55CFA007D8B7A /* DatesChosen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesChosen.swift; sourceTree = "<group>"; };
 		D03DF4601CC5BC1F007D8B7A /* NSdateFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSdateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		D05C254A1CC6CA440053212D /* SearchPlacesResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlacesResultsController.swift; sourceTree = "<group>"; };
+		D0C3C41B1CC83C41002530CD /* EventFindrTest01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFindrTest01.swift; sourceTree = "<group>"; };
+		D0C3C41D1CC8406F002530CD /* EventFindrTest02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFindrTest02.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				D03DF35A1CBEE92C007D8B7A /* EventFindrTests.swift */,
+				D0C3C41B1CC83C41002530CD /* EventFindrTest01.swift */,
 				D03DF35C1CBEE92C007D8B7A /* Info.plist */,
+				D0C3C41D1CC8406F002530CD /* EventFindrTest02.swift */,
 			);
 			path = EventFindrTests;
 			sourceTree = "<group>";
@@ -483,6 +489,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03DF35B1CBEE92C007D8B7A /* EventFindrTests.swift in Sources */,
+				D0C3C41E1CC8406F002530CD /* EventFindrTest02.swift in Sources */,
+				D0C3C41C1CC83C41002530CD /* EventFindrTest01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
